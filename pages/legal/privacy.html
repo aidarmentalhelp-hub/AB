@@ -3,522 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Первая помощь | Анти-выгорание для врачей</title>
+    <title>Политика конфиденциальности - Анти-выгорание</title>
+    
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    
     <style>
-        @font-face {
-            font-family: 'Airfool';
-            src: url('Airfool.ttf') format('truetype'),
-                 url('Airfool.otf') format('opentype'),
-                 url('Airfool.woff') format('woff'),
-                 url('Airfool.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --success: #2ecc71;
-            --warning: #f39c12;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-        
-        .airfool-title {
-            font-family: 'Airfool', cursive;
-            font-size: 4.5rem;
-            text-align: center;
-            color: white;
-            margin: 0;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-        }
-        
-        .main-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 10px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
-        
-        .quick-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin: 1.5rem 0;
-        }
-        
-        .quick-nav-top {
-            margin: 1rem 0 2rem 0;
-        }
-        
-        .nav-btn {
-            background: white;
-            color: var(--primary);
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .nav-btn:hover {
-            background: var(--secondary);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .section {
+        .privacy-content {
             background: white;
             padding: 2rem;
             border-radius: 15px;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         
-        .technique {
-            background: white;
-            border: 2px solid var(--light);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            transition: all 0.3s;
+        .privacy-section {
+            margin-bottom: 2rem;
         }
         
-        .technique:hover {
-            border-color: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .privacy-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
         
-        .technique h3 {
-            color: var(--primary);
-            margin-top: 0;
-            text-align: center;
+        .privacy-section h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 0.5rem 0;
         }
         
-        .technique-content {
-            margin-top: 1rem;
-        }
-        
-        .timer-display {
-            font-size: 3rem;
-            font-weight: bold;
-            text-align: center;
-            color: var(--primary);
-            margin: 1rem 0;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .timer-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            margin: 0 5px;
-            transition: all 0.3s;
-        }
-        
-        .timer-btn:hover {
-            background: var(--primary);
-            transform: translateY(-2px);
-        }
-        
-        .timer-btn.stop {
-            background: var(--accent);
-        }
-        
-        .timer-btn.stop:hover {
-            background: #c0392b;
-        }
-        
-        .timer-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 1rem 0;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 15px;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 1rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .fire-extinguisher {
-            font-size: 3rem;
-            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
-        }
-        
-        ol, ul {
+        .privacy-list {
+            list-style-type: none;
             padding-left: 1.5rem;
         }
         
-        li {
+        .privacy-list li {
             margin-bottom: 0.5rem;
+            position: relative;
         }
         
-        .help-container {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border: 2px dashed var(--secondary);
-        }
-        
-        .help-btn {
-            background: var(--success);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-right: 10px;
-            transition: all 0.3s;
-        }
-        
-        .help-btn:hover {
-            background: #27ae60;
-            transform: translateY(-2px);
-        }
-        
-        .help-btn.stop {
-            background: var(--accent);
-        }
-        
-        .help-btn.stop:hover {
-            background: #c0392b;
-        }
-        
-        .help-btn.more {
-            background: var(--warning);
-        }
-        
-        .help-btn.more:hover {
-            background: #e67e22;
-        }
-        
-        .task-display {
-            font-size: 1.2rem;
+        .privacy-list li:before {
+            content: "•";
+            color: #3498db;
             font-weight: bold;
-            text-align: center;
-            color: var(--primary);
-            margin: 1rem 0;
-            padding: 1rem;
-            background: white;
-            border-radius: 10px;
-            border: 2px solid var(--secondary);
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
         }
         
-        .help-controls {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 1rem;
+        .highlight {
+            background: #fff3cd;
+            padding: 1rem;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-content {
+                padding: 1.5rem;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="main-title">
-        <span class="fire-extinguisher">🧯</span>
-        <h1 class="airfool-title">Давай потушим!</h1>
-        <span class="fire-extinguisher">🧯</span>
+    <!-- Верхнее выпадающее меню -->
+    <div class="header-menu">
+        <button class="header-menu-button">☰ Меню</button>
+        <div class="header-dropdown">
+            <a href="../index.html"><span>⭐</span> Главная</a>
+            <a href="quick-help.html"><span>🚀</span> Первая помощь</a>
+            <a href="daily.html"><span>📅</span> На каждый день</a>
+            <a href="materials.html"><span>📚</span> Материалы</a>
+            <a href="organizational.html"><span>🏥</span> Для организации</a>
+            <a href="emergency.html"><span>🆘</span> Экстренная помощь</a>
+            <a href="tests.html"><span>📝</span> Тесты</a>
+        </div>
     </div>
-    <p class="subtitle">Ваш личный пожарный щит от профессионального выгорания</p>
+
+    <div class="main-title">
+        <span class="stethoscope">🩺</span>
+        <h1 class="serious-title">
+            <a href="../index.html">Давай тушить!</a>
+        </h1>
+        <span class="stethoscope">🩺</span>
+    </div>
+    <p class="subtitle">Профилактика профессионального выгорания у медицинских работников</p>
+    
+    <!-- Кнопка теста в шапке -->
+    <div>
+        <a href="https://aidarmentalhelp-hub.github.io/mbitest/" target="_blank" class="header-test-btn">
+            🔍 Пройти тест на выгорание 🔍
+        </a>
+    </div>
 </header>
 
-<!-- Дублированные кнопки навигации сверху -->
-<div class="quick-nav quick-nav-top">
-    <a href="index.html" class="nav-btn">🏠 Главная</a>
-    <a href="quick-help.html" class="nav-btn" style="background: var(--secondary); color: white;">🚀 Первая помощь</a>
-    <a href="daily.html" class="nav-btn">📅 На каждый день</a>
-    <a href="mindfulness.html" class="nav-btn">🧠 Осознанность</a>
-    <a href="boundaries.html" class="nav-btn">🛡️ Границы</a>
-    <a href="organizational.html" class="nav-btn">🏥 Для организации</a>
-    <a href="emergency.html" class="nav-btn">🆘 Экстренная помощь</a>
-</div>
-
-<div class="section">
-    <h2 style="text-align: center; color: var(--primary);">🚀 Техники "скорой помощи" (5-7 минут)</h2>
-    <p style="text-align: center; font-size: 1.1rem;">Быстрые методы для мгновенного снятия напряжения и стресса</p>
-</div>
-
-<!-- Дыхание 4-7-8 -->
-<div class="technique">
-    <h3>🌬️ Дыхание 4-7-8</h3>
-    <div class="technique-content">
-        <p>Техника для мгновенного снятия напряжения и успокоения нервной системы:</p>
-        <ol>
-            <li>Вдох через нос на 4 счета</li>
-            <li>Задержка дыхания на 7 счетов</li>
-            <li>Медленный выдох через рот на 8 счетов</li>
-            <li>Повторить 5-10 циклов</li>
-        </ol>
-        <div class="timer-display" id="breath-timer">05:00</div>
-        <div class="timer-controls">
-            <button class="timer-btn" onclick="startTimer('breath')">▶️ Запустить</button>
-            <button class="timer-btn stop" onclick="stopTimer('breath')">⏹️ Остановить</button>
-        </div>
+<div class="privacy-content">
+    <h1>Политика конфиденциальности</h1>
+    <p class="subtitle">Последнее обновление: 2024 год</p>
+    
+    <div class="privacy-section">
+        <h2>1. Общие положения</h2>
+        <p>Настоящая Политика конфиденциальности персональных данных (далее — Политика) действует в отношении всей информации, которую сайт «Анти-выгорание» может получить о Пользователе во время использования сайта.</p>
     </div>
-</div>
-
-<!-- Метод "Позвольте себе потревожиться" -->
-<div class="technique">
-    <h3>⏰ Метод "Позвольте себе потревожиться"</h3>
-    <div class="technique-content">
-        <p>Целенаправленное выделение времени для тревоги помогает контролировать её:</p>
-        <ol>
-            <li>Поставьте таймер на 5 минут</li>
-            <li>Позвольте себе полностью погрузиться в тревожные мысли</li>
-            <li>Не сопротивляйтесь, а полностью "потревожьтесь"</li>
-            <li>Когда таймер сработает, скажите: "Время тревоги закончено"</li>
-            <li>Переключитесь на конкретное действие</li>
-        </ol>
-        <div class="timer-display" id="worry-timer">05:00</div>
-        <div class="timer-controls">
-            <button class="timer-btn" onclick="startTimer('worry')">▶️ Запустить</button>
-            <button class="timer-btn stop" onclick="stopTimer('worry')">⏹️ Остановить</button>
-        </div>
-    </div>
-</div>
-
-<!-- Заземление 5-4-3-2-1 -->
-<div class="technique">
-    <h3>🌍 Заземление 5-4-3-2-1</h3>
-    <div class="technique-content">
-        <p>Вернитесь в "здесь и сейчас", когда чувствуете перегрузку:</p>
-        <ul>
-            <li><strong>5</strong> вещей, которые вы видите вокруг себя</li>
-            <li><strong>4</strong> вещи, которые ощущаете (текстура, температура)</li>
-            <li><strong>3</strong> звука, которые слышите прямо сейчас</li>
-            <li><strong>2</strong> запаха, которые чувствуете</li>
-            <li><strong>1</strong> вкус (можно сделать глоток воды)</li>
+    
+    <div class="privacy-section">
+        <h2>2. Сбор и использование информации</h2>
+        
+        <h3>2.1. Типы собираемой информации</h3>
+        <ul class="privacy-list">
+            <li>Персональные данные, предоставляемые добровольно при заполнении форм</li>
+            <li>Техническая информация (IP-адрес, тип браузера, время访问)</li>
+            <li>Cookie-файлы и аналогичные технологии</li>
         </ul>
         
-        <div class="help-container">
-            <div style="text-align: center; margin-bottom: 1rem;">
-                <button class="help-btn" onclick="generateTask()">🎯 Помоги</button>
+        <h3>2.2. Цели сбора информации</h3>
+        <ul class="privacy-list">
+            <li>Предоставление услуг и функционала сайта</li>
+            <li>Анализ и улучшение работы сайта</li>
+            <li>Обратная связь с пользователями</li>
+            <li>Обеспечение безопасности</li>
+        </ul>
+    </div>
+    
+    <div class="privacy-section">
+        <h2>3. Обработка персональных данных</h2>
+        <p>Обработка персональных данных осуществляется в соответствии с законодательством РФ.</p>
+        
+        <div class="highlight">
+            <strong>⚠️ Важно:</strong> Сайт не собирает и не обрабатывает специальные категории персональных данных, относящиеся к расовой, национальной принадлежности, политическим взглядам, религиозным или философским убеждениям, состоянию здоровья, интимной жизни.
+        </div>
+    </div>
+    
+    <div class="privacy-section">
+        <h2>4. Cookie-файлы</h2>
+        <p>Сайт использует cookie-файлы для:</p>
+        <ul class="privacy-list">
+            <li>Аутентификации пользователей</li>
+            <li>Хранения пользовательских настроек</li>
+            <li>Сбора статистики посещаемости</li>
+            <li>Улучшения функциональности сайта</li>
+        </ul>
+    </div>
+    
+    <div class="privacy-section">
+        <h2>5. Защита информации</h2>
+        <p>Мы принимаем необходимые организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения, а также от иных неправомерных действий.</p>
+    </div>
+    
+    <div class="privacy-section">
+        <h2>6. Передача информации третьим лицам</h2>
+        <p>Мы не передаем персональные данные третьим лицам, за исключением:</p>
+        <ul class="privacy-list">
+            <li>Случаев, предусмотренных законодательством РФ</li>
+            <li>При получении явного согласия пользователя</li>
+            <li>Для выполнения обязательств перед пользователем</li>
+        </ul>
+    </div>
+    
+    <div class="privacy-section">
+        <h2>7. Права пользователей</h2>
+        <p>Пользователь имеет право:</p>
+        <ul class="privacy-list">
+            <li>Получать информацию об обработке своих персональных данных</li>
+            <li>Требовать уточнения, блокирования или уничтожения данных</li>
+            <li>Отозвать согласие на обработку данных</li>
+            <li>Обжаловать действия или бездействие оператора</li>
+        </ul>
+    </div>
+    
+    <div class="privacy-section">
+        <h2>8. Контакты</h2>
+        <p>По всем вопросам, связанным с защитой персональных данных, вы можете обратиться:</p>
+        <ul class="privacy-list">
+            <li>Email: <a href="mailto:aidarmentalhelp@gmail.com">aidarmentalhelp@gmail.com</a></li>
+            <li>Telegram: <a href="https://t.me/ChiefmacD" target="_blank">@ChiefmacD</a></li>
+            <li>WhatsApp: <a href="https://wa.me/79068400712" target="_blank">+7 906 840 07 12</a></li>
+        </ul>
+    </div>
+    
+    <div class="privacy-section">
+        <h2>9. Изменения в политике</h2>
+        <p>Мы оставляем за собой право вносить изменения в настоящую Политику конфиденциальности. При внесении изменений в актуальной редакции указывается дата последнего обновления.</p>
+    </div>
+</div>
+
+<!-- Футер -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Навигация</h3>
+            <div class="footer-links">
+                <a href="../index.html">Главная</a>
+                <a href="quick-help.html">Первая помощь</a>
+                <a href="daily.html">На каждый день</a>
+                <a href="materials.html">Материалы</a>
+                <a href="organizational.html">Для организации</a>
+                <a href="emergency.html">Экстренная помощь</a>
+                <a href="tests.html">Тесты</a>
             </div>
-            
-            <div class="task-display" id="task-display" style="display: none;">
-                <!-- Текст будет добавляться через JavaScript -->
+        </div>
+        
+        <div class="footer-section">
+            <h3>Контакты</h3>
+            <div class="contact-info">
+                <p>💬 Буду рад вашей обратной связи</p>
+                <div class="contact-links">
+                    <a href="mailto:aidarmentalhelp@gmail.com" class="contact-link">
+                        📩 Email
+                    </a>
+                    <a href="https://t.me/ChiefmacD" target="_blank" class="contact-link">
+                        ✈️ Telegram
+                    </a>
+                    <a href="https://wa.me/79068400712" target="_blank" class="contact-link">
+                        💬 WhatsApp
+                    </a>
+                </div>
             </div>
-            
-            <div class="help-controls" id="help-controls" style="display: none;">
-                <button class="help-btn more" onclick="generateTask()">🔄 Еще</button>
-                <button class="help-btn stop" onclick="resetHelp()">⏹️ Стоп</button>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Юридическая информация</h3>
+            <div class="legal-links">
+                <a href="privacy.html" class="active">Политика конфиденциальности</a>
+                <a href="terms.html">Пользовательское соглашение</a>
+                <a href="consent.html">Согласие на обработку данных</a>
+                <a href="cookies.html">Использование cookies</a>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Техника "Заземление через тело" -->
-<div class="technique">
-    <h3>💪 Техника "Заземление через тело"</h3>
-    <div class="technique-content">
-        <p>Быстрое сканирование тела и осознанное напряжение-расслабление мышц:</p>
-        <ol>
-            <li>Сядьте прямо, закройте глаза</li>
-            <li>Напрягите одновременно стопы, сожмите кулаки и стисните зубы на 5 секунд</li>
-            <li>Резко расслабьтесь на выдохе</li>
-            <li>Повторите 2-3 раза</li>
-            <li>Сосредоточьтесь на ощущениях расслабления в теле</li>
-        </ol>
-        <p>Это снимает мышечные зажимы и мгновенно переключает нервную систему.</p>
+    
+    <div class="footer-bottom">
+        <p>© 2024 Анти-выгорание. Профилактика профессионального выгорания у медицинских работников</p>
     </div>
-</div>
-
-<!-- "Контейнирование" эмоций -->
-<div class="technique">
-    <h3>📦 "Контейнирование" эмоций</h3>
-    <div class="technique-content">
-        <p>Метод для изоляции сильных негативных эмоций до лучшего момента:</p>
-        <ol>
-            <li>Мысленно представьте себе прочный контейнер (сейф, шкатулка, сундук)</li>
-            <li>"Положите" в него все свои переживания, тревоги и раздражение</li>
-            <li>Закройте его на ключ</li>
-            <li>Скажите себе: "Я вернусь к этому позже, в подходящее время"</li>
-            <li>Вернитесь к контейнеру только когда будете готовы разобраться с эмоциями</li>
-        </ol>
-    </div>
-</div>
-
-<!-- Холод -->
-<div class="technique">
-    <h3>❄️ "Сброс" через холод</h3>
-    <div class="technique-content">
-        <p>Резкое переключение нервной системы через температурный раздражитель:</p>
-        <ol>
-            <li>Выйдите в процедурный кабинет или к раковине</li>
-            <li>Умойте лицо и запястья ХОЛОДНОЙ водой</li>
-            <li>Сконцентрируйтесь на ощущении холода на коже на 10-15 секунд</li>
-            <li>Сделайте несколько глубоких вдохов</li>
-            <li>Повторите при необходимости</li>
-        </ol>
-        <p>Этот метод активирует парасимпатическую нервную систему и снижает тревогу.</p>
-    </div>
-</div>
-
-<!-- Основные кнопки навигации -->
-<div class="quick-nav">
-    <a href="index.html" class="nav-btn">🏠 Главная</a>
-    <a href="quick-help.html" class="nav-btn" style="background: var(--secondary); color: white;">🚀 Первая помощь</a>
-    <a href="daily.html" class="nav-btn">📅 На каждый день</a>
-    <a href="mindfulness.html" class="nav-btn">🧠 Осознанность</a>
-    <a href="boundaries.html" class="nav-btn">🛡️ Границы</a>
-    <a href="organizational.html" class="nav-btn">🏥 Для организации</a>
-    <a href="emergency.html" class="nav-btn">🆘 Экстренная помощь</a>
-</div>
-
-<footer>
-    <p>© 2023 Анти-выгорание для врачей. Все права защищены.</p>
-    <div class="footer-links">
-        <a href="index.html">🏠 Главная</a>
-        <a href="quick-help.html">🚀 Первая помощь</a>
-        <a href="daily.html">📅 На каждый день</a>
-        <a href="mindfulness.html">🧠 Осознанность</a>
-        <a href="boundaries.html">🛡️ Границы</a>
-        <a href="organizational.html">🏥 Для организации</a>
-        <a href="emergency.html">🆘 Экстренная помощь</a>
-    </div>
-    <p>Если вам нужна помощь, обратитесь к профессиональному психологу или позвоните на горячую линию: 8-800-2000-122</p>
 </footer>
 
-<script>
-    // Массивы для генерации заданий
-    const colors = ['красный', 'оранжевый', 'желтый', 'зеленый', 'голубой', 'синий', 'фиолетовый', 
-                   'розовый', 'коричневый', 'черный', 'белый', 'серый', 'золотой', 'серебряный', 'бирюзовый'];
-    
-    const objects = ['предметов', 'вещей', 'объектов', 'деталей', 'элементов', 'изделий', 'аксессуаров'];
-    
-    // Таймеры
-    const timers = {};
-    
-    function startTimer(type) {
-        if (timers[type]) {
-            clearInterval(timers[type]);
-        }
-        
-        const timerDisplay = document.getElementById(`${type}-timer`);
-        let seconds = 5 * 60; // 5 минут
-        
-        timerDisplay.style.color = '#e74c3c';
-        
-        timers[type] = setInterval(() => {
-            seconds--;
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            
-            timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-            
-            if (seconds <= 0) {
-                clearInterval(timers[type]);
-                timerDisplay.textContent = "00:00";
-                timerDisplay.style.color = '#2ecc71';
-            }
-        }, 1000);
-    }
-    
-    function stopTimer(type) {
-        if (timers[type]) {
-            clearInterval(timers[type]);
-            timers[type] = null;
-        }
-        
-        const timerDisplay = document.getElementById(`${type}-timer`);
-        timerDisplay.textContent = "05:00";
-        timerDisplay.style.color = '#2c3e50';
-    }
+<!-- Фиксированное меню -->
+<div class="floating-menu">
+    <button class="menu-button">📋</button>
+    <div class="dropdown-content">
+        <a href="../index.html"><span>⭐</span> Главная</a>
+        <a href="quick-help.html"><span>🚀</span> Первая помощь</a>
+        <a href="daily.html"><span>📅</span> На каждый день</a>
+        <a href="materials.html"><span>📚</span> Материалы</a>
+        <a href="organizational.html"><span>🏥</span> Для организации</a>
+        <a href="emergency.html"><span>🆘</span> Экстренная помощь</a>
+        <a href="tests.html"><span>📝</span> Тесты</a>
+    </div>
+</div>
 
-    // Функция для генерации задания
-    function generateTask() {
-        const randomNumber = Math.floor(Math.random() * 7) + 4; // от 4 до 10
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        const randomObject = objects[Math.floor(Math.random() * objects.length)];
-        
-        const taskText = `Найди ${randomNumber} ${randomColor} ${randomObject} в комнате`;
-        
-        // Показываем элементы
-        document.getElementById('task-display').textContent = taskText;
-        document.getElementById('task-display').style.display = 'flex';
-        document.getElementById('help-controls').style.display = 'flex';
-    }
-    
-    // Функция для сброса
-    function resetHelp() {
-        // Скрываем элементы
-        document.getElementById('task-display').style.display = 'none';
-        document.getElementById('help-controls').style.display = 'none';
-    }
-</script>
+<script type="module" src="../assets/js/main.js"></script>
 
 </body>
 </html>
